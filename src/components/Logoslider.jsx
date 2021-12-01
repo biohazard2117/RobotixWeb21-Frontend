@@ -6,7 +6,7 @@ function Logoslider(){
   <Fragment>
         <Reveal effect="fadeInUp">
          <section className="logo-slider-section padding-bottom-2 padding-top" style={{paddingBottom:"0px"}}>
-             <section class="logo-slider-section section--bg padding-bottom padding-top">
+             <section className="logo-slider-section section--bg padding-bottom padding-top">
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-lg-10">

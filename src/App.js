@@ -16,6 +16,7 @@ import Recruit from "./components/Recruit/Recruit.jsx";
 import Docs from "./components/Docs.jsx";
 import config from "react-reveal/globals";
 import Logosldier from "./components/Logoslider";
+import Alumni from "./components/Alumni";
 
 config({ ssrFadeout: true });
 
@@ -87,6 +88,10 @@ function App() {
 
         <Route path="/recruitment">
           <Recruit/>
+        </Route>
+
+        <Route path="/alumni">
+          <Alumni/>
         </Route>
 
 

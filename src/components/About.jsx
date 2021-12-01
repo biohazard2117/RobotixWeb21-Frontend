@@ -17,7 +17,7 @@ const About = () => {
                 </div>
                 <div className="col-xl-7 pl-xl-0">
                     <div className="about-content">
-                    <Fade bottom cascade duration="800" distance="100px">
+                    <Fade bottom cascade duration={800} distance="100px">
 
                         <div className="section-header left-style">
                             <h5 className="cate">A Few Words About Us</h5>

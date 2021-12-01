@@ -72,16 +72,16 @@ function Contact() {
                                 <div className="msg-status"></div>
                                 <form className="contact-form" id="contact_form">
                                     <div  className="form-group">
-                                        <label for="name">Your Full Name</label>
+                                        <label htmlFor="name">Your Full Name</label>
                                         <input onChange={handleInput} type="text" placeholder="Enter Your Full Name" id="name" required />
                                         <div  id="contact_name_warning" className="warning-msg">This field is required</div>
                                     </div>
                                     {/* <div className="form-group">
-                                        <label for="phone">Phone Number</label>
+                                        <label htmlFor="phone">Phone Number</label>
                                         <input type="text" placeholder="Enter Your Phone Number " id="phone" required />
                                     </div> */}
                                     <div  className="form-group ">
-                                        <label for="email">Your Email </label>
+                                        <label htmlFor="email">Your Email </label>
                                         <input onChange={handleInput} type="text" placeholder="Enter Your Email " id="email" required  />
                                        
                                         <div  id="contact_email_warning" className="warning-msg">
@@ -90,15 +90,15 @@ function Contact() {
                                     </div>
 
                                     {/* <div className="form-group">
-                                        <label for="subject">Your Subject</label>
+                                        <label htmlFor="subject">Your Subject</label>
                                         <input type="text" placeholder="Enter Your Subject " id="subject" required />
                                     </div> */}
                                     <div  className="form-group mb-0">
-                                        <label for="message">Your Message </label>
+                                        <label htmlFor="message">Your Message </label>
                                         <textarea onChange={handleInput} id="message" placeholder="Enter Your Message" required></textarea>
                                         <div  id="contact_message_warning" className="warning-msg">This field is required</div>
                                         {/* <div className="form-check">
-                                    <input type="checkbox" id="check" checked/><label for="check">I agree to receive emails, newsletters and promotional messages</label>
+                                    <input type="checkbox" id="check" checked/><label htmlFor="check">I agree to receive emails, newsletters and promotional messages</label>
                                 </div> */}
                                     </div>
                                     <div className="form-group">

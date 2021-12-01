@@ -8,7 +8,7 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import TeamModal from "./TeamModal";
 import TeamDetailsModal from "./TeamDetailsModal";
-// import MailOutlineIcon from '@material-ui/icons/MailOutline';
+import MailOutlineIcon from "@material-ui/icons/MailOutline";
 // import PhoneIcon from "@material-ui/icons/Phone";
 export const Team = () => {
   const [show, setShow] = useState(false);
@@ -136,7 +136,7 @@ export const Team = () => {
                                 data-target="#teamUser9"
                               >
                                 <img
-                                  src="https://image.flaticon.com/icons/png/512/194/194938.png"
+                                  src={member.photo}
                                   alt="team-profile-1"
                                   className="rounded-circle"
                                   width="128"
@@ -152,28 +152,38 @@ export const Team = () => {
                                 <div className="role">{member.branch}</div>
                                 <div className="social-profile mt-3">
                                   <a
-                                    href="/"
+                                    target="_blank"
+                                    href={member.github_url}
                                     title="Linkedin"
                                     className="font-medium grey-accent2 mr-2"
                                   >
-                                    <LinkedInIcon fontSize="medium" />{" "}
+                                    <LinkedInIcon fontSize="default" />{" "}
                                   </a>
                                   <a
-                                    href="/"
+                                    href={member.fb_url}
                                     title="Facebook"
                                     className="font-medium grey-accent2 mr-2"
                                   >
-                                    <FacebookIcon fontSize="medium" />
+                                    <FacebookIcon fontSize="default" />
                                   </a>
                                   <a
-                                    href="/"
-                                    title="Phone"
+                                    target="_blank"
+                                    href={member.instagram_url}
+                                    title="Instagram"
+                                    className="font-medium grey-accent2 mr-2"
+                                  >
+                                    {" "}
+                                    <InstagramIcon fontSize="default" />
+                                  </a>
+                                  <a
+                                    target="_blank"
+                                    href={`mailto:${member.email_id}`}
+                                    title="Mail"
                                     className="font-medium grey-accent2"
                                   >
                                     {" "}
-                                    <InstagramIcon fontSize="medium" />
+                                    <MailOutlineIcon />
                                   </a>
-                                  {/* <a href="/" title="Mail" className="font-medium grey-accent2"> <MailOutlineIcon/></a> */}
                                 </div>
                               </div>
                             </div>

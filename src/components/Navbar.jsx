@@ -1,5 +1,5 @@
 import React, {Fragment} from "react";
-
+import {Link} from "react-router-dom";
 
 function Navbar(){
 
@@ -12,15 +12,15 @@ function Navbar(){
  
 return(
   <Fragment>
-   <header class="header-section navbar" id="navbar">
-        <div class="container">
-            <div class="header-wrapper">
-                <div class="logo">
+   <header className="header-section navbar" id="navbar">
+        <div className="container">
+            <div className="header-wrapper">
+                <div className="logo">
                     <a href="index.html">
                         <img src="./assets/images/favicon.png" alt="logo" style={{height:"70px", width:"50px", paddingTop:"10px", paddingBottom:"10px"}}/>
                     </a>
                 </div>
-                <ul class="menu">
+                <ul className="menu">
                     <li>
                     <button name="main-section" className="navbtn" onClick={scroll}>Home</button>
                        
@@ -41,9 +41,14 @@ return(
                     <li>
                         <button name="contact-section" className="navbtn" onClick={scroll}>Contact</button>
                     </li>
+                    <li>
+                        <a className="navbtn" href="/alumni">
+                        Alumni
+                        </a>
+                    </li>
                    
                 </ul>
-                <div class="header-bar d-lg-none">
+                <div className="header-bar d-lg-none">
                     <span></span>
                     <span></span>
                     <span></span>

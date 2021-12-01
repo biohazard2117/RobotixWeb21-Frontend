@@ -12,7 +12,7 @@ function Signin(props) {
                     <div className="account-title text-center">
                         <a href="index.html" className="back-home"><i className="fas fa-angle-left"></i><span>Back <span className="d-none d-sm-inline-block">To Robotix Club</span></span></a>
                         <a href="#0" className="logo">
-                            <img src="./assets/images/logo/logo.png" alt="logo" />
+                            <img src="./assets/images/robotixLogo.png" alt="logo" style={{height:"150px"}}/>
                         </a>
                     </div>
                     <div className="account-wrapper">
