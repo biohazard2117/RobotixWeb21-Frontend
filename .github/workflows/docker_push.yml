@@ -39,3 +39,5 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             New Frontend Image Push to Dockerhub 
+            To Push the build to server click here,
+            ${{ secrets.JENKIN_BUILD_URL }}

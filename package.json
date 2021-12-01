@@ -11,6 +11,7 @@
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
+    "crypto-js": "^4.1.1",
     "css-doodle": "^0.17.3",
     "font-awesome": "^4.7.0",
     "js-cookie": "^2.2.1",
@@ -28,6 +29,7 @@
     "redux-persist": "^6.0.0",
     "scrollreveal": "^4.0.9",
     "universal-cookie": "^4.0.4",
+    "uuid": "^8.3.2",
     "vanta": "^0.5.21",
     "web-vitals": "^1.1.1"
   },

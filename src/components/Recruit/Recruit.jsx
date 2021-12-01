@@ -1,10 +1,11 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import axios from "axios";
-
-import Signin from './Signin'
+import RecruitForm from './RecruitForm';
+import Signin from './Signin';
+import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 import Cookies from "universal-cookie";
 
-import api from "../service";
+import api from "../../service";
 
 
 
@@ -91,14 +92,21 @@ function Recruit() {
 
 
     return (
+        <BrowserRouter>
+
+      <Switch>
+
+        <Route path="/recruitment">
         <div>
-          
-
-            {user.loginStatus ? <div>Dashboard<button className="btn btn-primary" onClick={logout}>Logout</button></div> : <Signin funcHandleInput={inputHandler} funcHandleSubmit={setToken} />}
-
-
-
+          {user.loginStatus ? <div>Dashboard<button className="btn btn-primary" onClick={logout}>Logout</button></div> : <Signin funcHandleInput={inputHandler} funcHandleSubmit={setToken} />}
         </div>
+        </Route>
+        <Route path="/recruitment_form">
+            <RecruitForm/>
+        </Route>
+        </Switch>
+
+        </BrowserRouter>
     )
 }
 

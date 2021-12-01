@@ -1,11 +1,7 @@
-
-
 function activateTeam() {
   document.getElementById("Convenor").style.display = "block";
   document.getElementById("default-team-tab").className += " team-active";
-};
-
-
+}
 
 function TeamDomain(domain, j) {
   var i, tabcontent, tablinks;
@@ -17,10 +13,9 @@ function TeamDomain(domain, j) {
   for (i = 0; i < tablinks.length; i++) {
     if (i != j) {
       tablinks[i].className = tablinks[i].className.replace(" team-active", "");
-    }else{
-      tablinks[i].className = tablinks[i].className +=(" team-active");
+    } else {
+      tablinks[i].className = tablinks[i].className += " team-active";
     }
   }
   document.getElementById(domain).style.display = "block";
- 
 }

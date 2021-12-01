@@ -11,8 +11,8 @@ import Pricing2 from "./components/Pricing2"
 import Team from "./components/Team";
 import Contact from "./components/Contact"
 import Footer from "./components/Footer";
-import Signin from "./components/Signin.jsx";
-import Recruit from "./components/Recruit.jsx";
+import Signin from "./components/Recruit/Signin.jsx";
+import Recruit from "./components/Recruit/Recruit.jsx";
 import Docs from "./components/Docs.jsx";
 import config from "react-reveal/globals";
 import Logosldier from "./components/Logoslider";

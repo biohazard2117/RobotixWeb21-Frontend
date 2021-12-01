@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
-
+import {Link} from 'react-router-dom';
 
 function Signin(props) {
 
@@ -29,7 +29,9 @@ function Signin(props) {
                                     <span className="sign-in-recovery">Forgot your password? <a href="reset-password.html">recover password</a></span>
                                 </div>
                                 <div className="form-group text-center">
+                                    <Link to={"/recruitment_form"}>
                                     <button type="submit" className="mt-2 mb-2" onClick={props.funcHandleSubmit}>Sign In</button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
