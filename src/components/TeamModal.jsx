@@ -50,7 +50,10 @@ const TeamModal = ({ show, setShow, email, setVerified }) => {
   return (
     <>
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
+        <Modal.Header
+          closeButton
+          style={{ display: "grid", gridTemplateColumns: "9fr 1fr" }}
+        >
           <Modal.Title style={{ color: "#000000e1" }}>
             OTP Verification
           </Modal.Title>
@@ -78,7 +81,7 @@ const TeamModal = ({ show, setShow, email, setVerified }) => {
             </Form>
           </Modal.Body>
         )}
-        <Modal.Footer>
+        <Modal.Footer style={{ flexWrap: "inherit" }}>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>

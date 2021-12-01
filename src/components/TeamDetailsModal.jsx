@@ -60,7 +60,11 @@ const TeamDetailsModal = ({ show, setShow, member }) => {
           if (err.response.status === 400) {
             let error = "";
             for (var x in err.response.data) {
-              let temp = err.response.data[x][0] + " for " + x;
+              let temp = err.response.data[x][0];
+              temp =
+                temp.toLowerCase().substring(0, temp.length - 1) +
+                " for " +
+                x;
               error += temp + "\n";
             }
             alert(error + "Or leave them empty");
@@ -71,7 +75,10 @@ const TeamDetailsModal = ({ show, setShow, member }) => {
   };
   return (
     <Modal show={show} onHide={handleClose}>
-      <Modal.Header closeButton>
+      <Modal.Header
+        closeButton
+        style={{ display: "grid", gridTemplateColumns: "9fr 1fr" }}
+      >
         <Modal.Title style={{ color: "black" }}>Change Details</Modal.Title>
       </Modal.Header>
       <Modal.Body>
@@ -161,7 +168,7 @@ const TeamDetailsModal = ({ show, setShow, member }) => {
           </Form.Group>
         </Form>
       </Modal.Body>
-      <Modal.Footer>
+      <Modal.Footer style={{ flexWrap: "inherit" }}>
         <Button variant="secondary" onClick={handleClose}>
           Close
         </Button>
