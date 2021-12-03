@@ -9,7 +9,6 @@ const TeamDetailsModal = ({ show, setShow, member }) => {
   const [photo, setPhoto] = useState("");
   const [name, setName] = useState("");
   const [branch, setBranch] = useState("");
-  const [post, setPost] = useState("");
   const [facebook, setFacebook] = useState("");
   const [insta, setInsta] = useState("");
   const [github, setGithub] = useState("");
@@ -20,7 +19,6 @@ const TeamDetailsModal = ({ show, setShow, member }) => {
     if (member !== null) {
       setName(member.name === null ? "" : member.name);
       setBranch(member.branch === null ? "" : member.branch);
-      setPost(member.post_assign === null ? "" : member.post_assign);
       setFacebook(member.fb_url === null ? "" : member.fb_url);
       setInsta(member.instagram_url === null ? "" : member.instagram_url);
       setGithub(member.github_url === null ? "" : member.github_url);
@@ -31,13 +29,13 @@ const TeamDetailsModal = ({ show, setShow, member }) => {
     }
   }, [member]);
   const handleClose = () => setShow(false);
+
   const patchData = () => {
     setLoading(true);
     let form_data = new FormData();
     if (photo) form_data.append("photo", photo, photo.name);
     if (name) form_data.append("name", name);
     if (branch) form_data.append("branch", branch);
-    if (post) form_data.append("post_assign", post);
     if (facebook) form_data.append("fb_url", facebook);
     if (insta) form_data.append("instagram_url", insta);
     if (github) form_data.append("github_url", github);
@@ -51,7 +49,8 @@ const TeamDetailsModal = ({ show, setShow, member }) => {
         },
       })
       .then((res) => {
-        console.log(res);
+        setLoading(false);
+        alert("Success");
         handleClose();
       })
       .catch((err) => {
@@ -62,9 +61,7 @@ const TeamDetailsModal = ({ show, setShow, member }) => {
             for (var x in err.response.data) {
               let temp = err.response.data[x][0];
               temp =
-                temp.toLowerCase().substring(0, temp.length - 1) +
-                " for " +
-                x;
+                temp.toLowerCase().substring(0, temp.length - 1) + " for " + x;
               error += temp + "\n";
             }
             alert(error + "Or leave them empty");
@@ -114,14 +111,6 @@ const TeamDetailsModal = ({ show, setShow, member }) => {
               value={branch}
               autoComplete={"off"}
             />
-            <br />
-            <Form.Control
-              type="text"
-              placeholder="Post"
-              onChange={(e) => setPost(e.target.value)}
-              value={post}
-              autoComplete={"off"}
-            />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicUrl">
             <Form.Control
@@ -142,7 +131,7 @@ const TeamDetailsModal = ({ show, setShow, member }) => {
             <br />
             <Form.Control
               type="url"
-              placeholder="Github id"
+              placeholder="LinkedIn id"
               onChange={(e) => setGithub(e.target.value)}
               value={github}
               autoComplete={"off"}

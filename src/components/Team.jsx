@@ -153,6 +153,7 @@ export const Team = () => {
                                 <div className="social-profile mt-3">
                                   <a
                                     target="_blank"
+                                    rel="noreferrer"
                                     href={member.github_url}
                                     title="Linkedin"
                                     className="font-medium grey-accent2 mr-2"
@@ -161,6 +162,8 @@ export const Team = () => {
                                   </a>
                                   <a
                                     href={member.fb_url}
+                                    target="_blank"
+                                    rel="noreferrer"
                                     title="Facebook"
                                     className="font-medium grey-accent2 mr-2"
                                   >
@@ -168,6 +171,7 @@ export const Team = () => {
                                   </a>
                                   <a
                                     target="_blank"
+                                    rel="noreferrer"
                                     href={member.instagram_url}
                                     title="Instagram"
                                     className="font-medium grey-accent2 mr-2"
@@ -177,6 +181,7 @@ export const Team = () => {
                                   </a>
                                   <a
                                     target="_blank"
+                                    rel="noreferrer"
                                     href={`mailto:${member.email_id}`}
                                     title="Mail"
                                     className="font-medium grey-accent2"

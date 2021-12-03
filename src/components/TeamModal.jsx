@@ -38,7 +38,7 @@ const TeamModal = ({ show, setShow, email, setVerified }) => {
       handleClose();
       return;
     }
-    let calcHash = sha256(otp).toString();
+    let calcHash = sha256(otp.trim()).toString();
     if (calcHash === hash) {
       setVerified(true);
       handleClose();
@@ -75,7 +75,8 @@ const TeamModal = ({ show, setShow, email, setVerified }) => {
                   value={otp}
                 />
                 <Form.Text className="text-muted" style={{ color: "#000000" }}>
-                  OTP expires in 5 minutes.
+                  An OTP has been send to your registered email address, it will
+                  expire in 5 minutes.
                 </Form.Text>
               </Form.Group>
             </Form>
