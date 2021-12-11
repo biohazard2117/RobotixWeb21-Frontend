@@ -70,6 +70,16 @@ const TeamDetailsModal = ({ show, setShow, member }) => {
         setLoading(false);
       });
   };
+  const handlePhoto = (e) => {
+    if (!e.target.files[0]) return;
+    if (e.target.files[0].size > 2097152) {
+      e.target.value = "";
+      alert("File is too big!");
+    } else {
+      setPhoto(e.target.files[0]);
+    }
+  };
+
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header
@@ -79,7 +89,7 @@ const TeamDetailsModal = ({ show, setShow, member }) => {
         <Modal.Title style={{ color: "black" }}>Change Details</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Form>
+        <Form onSubmit={(e) => e.preventDefault()}>
           <div className="mb-3" style={{ color: "black" }}>
             *Any details changed will be saved permanently.
           </div>
@@ -87,12 +97,11 @@ const TeamDetailsModal = ({ show, setShow, member }) => {
             <input
               style={{ background: "white", border: "none", height: "50%" }}
               type="file"
-              placeholder="Select a image of yourself"
               accept="images/*"
-              onChange={(e) => setPhoto(e.target.files[0])}
+              onChange={handlePhoto}
             />
             <Form.Text style={{ paddingLeft: "10px", color: "#000000" }}>
-              Display Image
+              Display Image (max. 2MB)
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicText">

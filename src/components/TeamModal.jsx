@@ -47,6 +47,9 @@ const TeamModal = ({ show, setShow, email, setVerified }) => {
       alert("Invalid OTP");
     }
   };
+
+  const handleSubmit = () => (hash ? checkHash() : sendOtp());
+
   return (
     <>
       <Modal show={show} onHide={handleClose}>
@@ -66,7 +69,7 @@ const TeamModal = ({ show, setShow, email, setVerified }) => {
         )}
         {hash && (
           <Modal.Body style={{ color: "#000000" }}>
-            <Form>
+            <Form onSubmit={(e) => e.preventDefault()}>
               <Form.Group className="mb-3" controlId="formBasicText">
                 <Form.Control
                   type="text"
@@ -88,9 +91,8 @@ const TeamModal = ({ show, setShow, email, setVerified }) => {
           </Button>
           <Button
             variant="primary"
-            onClick={() => {
-              hash ? checkHash() : sendOtp();
-            }}
+            onKeyPress={(e) => e.key === "Enter" && handleSubmit}
+            onClick={handleSubmit}
             disabled={isLoading}
           >
             {isLoading ? "Loading..." : "Continue"}
